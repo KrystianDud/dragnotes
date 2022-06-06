@@ -53,7 +53,7 @@ function App() {
                 </div>
                 <div className='noteCounter'>
                     <input type='number' min="0" max="10" value={availableNotes} onChange={(e) => updateCounter(e.target.value)}></input>
-                    <p>{`current notes ${currentNotes}`}</p>
+                    <p>Current notes: <span className='noteCounterNumber'>{currentNotes}</span></p>
                 </div>
             </nav>
             <div className='board'>
