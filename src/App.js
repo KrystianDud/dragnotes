@@ -1,15 +1,18 @@
-import react, { useState } from 'react';
+import react, { useState, useEffect } from 'react';
 import Note from './Note/Note'
 import './App.css';
 
 function App() {
     const [availableNotes, setAvailableNotes] = useState(5)
     const [currentNotes, setCurrentNotes] = useState(0)
+
     const [activeNote, setActiveNote] = useState(null)
     const [noteList, setNoteList] = useState([])
+
     const createNote = () => {
         let notes = currentNotes;
-        if (currentNotes != availableNotes) {
+
+        if (availableNotes > currentNotes && availableNotes != 0) {
             notes++;
             setCurrentNotes(notes)
             let setWidthPos = 35
@@ -37,8 +40,8 @@ function App() {
 
     const removeNote = (id) => {
         let updatedList = noteList.filter(item => item.id != id)
-        console.log(updatedList)
         setNoteList(updatedList)
+        setCurrentNotes(updatedList.length)
     }
 
 
@@ -49,7 +52,7 @@ function App() {
                     <button onClick={() => createNote()} className='createButton'>Create Note</button>
                 </div>
                 <div className='noteCounter'>
-                    <input type='number' value={availableNotes} onChange={(e) => updateCounter(e.target.value)}></input>
+                    <input type='number' min="0" max="10" value={availableNotes} onChange={(e) => updateCounter(e.target.value)}></input>
                     <p>{`current notes ${currentNotes}`}</p>
                 </div>
             </nav>
