@@ -170,7 +170,7 @@ body,
 
 .note input:focus-visible {
   border: none;
-  background-color: #fff;
+  background-color: transparent;
 
 }
 
