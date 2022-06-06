@@ -20,3 +20,5 @@ No backend functionality which means that whenever user will refresh the page, t
 
 ## Notes
 This is practice project and many features are non existent. The point of the project was to practice the mouse event operations.
+
+The aspect of the file management and styling css file seperation was ignored as this was not the main focus of this project.
